@@ -14,13 +14,13 @@
 
   # TODO: Set your username
   home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
+    username = "infty";
+    homeDirectory = "/home/infty";
   };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  home.packages = with pkgs; [ vim ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
