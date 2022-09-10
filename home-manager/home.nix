@@ -30,6 +30,15 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
   programs.kitty.enable = true;
+  
+  xdg = {
+    configFile = {
+      xmonad = {
+        source = ../config/xmonad;
+        recursive = true;
+      };
+    };
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
