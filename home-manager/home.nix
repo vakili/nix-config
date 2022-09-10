@@ -4,6 +4,7 @@
 { inputs, lib, config, pkgs, nur, ... }:
 
 let
+  addons = pkgs.nur.repos.rycee.firefox-addons;
 in
 {
   imports = [
@@ -45,10 +46,10 @@ in
   programs = {
     firefox = {
       enable = true;
-#      extensions = 
-#        with pkgs.nur.repos.rycee.firefox-addons; [
-#          privacy-badger
-#        ];
+      extensions = 
+        with addons; [
+          ublock-origin
+        ];
     };
     home-manager.enable = true;
     git = {

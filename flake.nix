@@ -5,6 +5,9 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
+    
+    # NUR
+    nur.url = "github:nix-community/NUR";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
@@ -29,7 +32,10 @@
       ];
     in rec {
       # Your custom packages and modifications
-      overlays = { default = import ./overlay { inherit inputs; }; };
+      overlays = {
+        default = import ./overlay { inherit inputs; };
+        nur = inputs.nur.overlay;
+      };
 
       # Reusable nixos modules you might want to export
       # These are usually stuff you would upstream into nixpkgs
