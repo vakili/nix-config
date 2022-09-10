@@ -21,3 +21,6 @@ xargs xinput --disable
 
 # turn off power led
 light -S 0 -s sysfs/leds/tpacpi::power
+
+# set background
+feh --bg-tile black-pixel.png
