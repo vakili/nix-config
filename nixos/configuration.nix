@@ -53,6 +53,13 @@
       preLVM = true;
     };
   };
+  
+  services.xserver.enable = true;
+  services.xserver.windowManager.xmonad = {
+    enable = true;
+    enableContribAndExtras = true;
+  };
+  services.xserver.displayManager.defaultSession = "none+xmonad";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {

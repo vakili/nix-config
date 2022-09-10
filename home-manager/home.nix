@@ -12,10 +12,14 @@
   # Comment out if you wish to disable unfree packages for your system
   nixpkgs.config.allowUnfree = true;
 
-  # TODO: Set your username
   home = {
     username = "infty";
     homeDirectory = "/home/infty";
+  };
+  
+  xsession.windowManager.xmonad = {
+    enable = true;
+    enableContribAndExtras = true;
   };
 
   # Add stuff for your user as you see fit:
@@ -25,6 +29,7 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
+  programs.kitty.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
