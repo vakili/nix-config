@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+# modify the current google search result to display results from past year only
+# this is achieved by appending &tbs=qdr:y to the url
+
+echo "open $QUTE_URL &tbs=qdr:y" >> $QUTE_FIFO

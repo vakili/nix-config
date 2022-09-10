@@ -1,0 +1,14 @@
+* Known issues
+  https://github.com/qutebrowser/qutebrowser/issues/1808
+  tested on i3, xmonad
+* Tips
+to view all bindings, run ~:bind~ (similar to emacs ~describe-key~)
+* Wishlist
+  - Ability to open a new tab immediately after the currently focused one, instead of opening it at the end of the list of tabs.
+  - ~.~ to repeat last command.
+  
+* Issues
+** White flash on page load even when dark mode enabled
+   See e.g. https://bugreports.qt.io/browse/QTBUG-84484
+* Resources
+  https://github.com/bbugyi200/dotfiles

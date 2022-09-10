@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+# open current url in firefox
+echo "spawn firefox $QUTE_URL" >> $QUTE_FIFO
+
+# you may prefer opening a private window instead
+# echo "spawn firefox -private-window $QUTE_URL" >> $QUTE_FIFO

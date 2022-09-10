@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+msg=hello
+echo "message-info '$msg'" >> $QUTE_FIFO

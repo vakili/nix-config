@@ -1,0 +1,8 @@
+* Future work
+Scripts could be specified declaratively and automatically fetched from
+greasyfork.org, either with a simple wget-based script, or via nix. This would
+allow upgrading all scripts at once, but may pose a security risk, since scripts
+should be reviewed before installing.
+
+* Resources
+removing elements https://janjongerden.nl/blog/remove-a-div.html

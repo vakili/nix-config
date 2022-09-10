@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+pandoc -s -r html $QUTE_URL -o ~/notes/documentation/$1.org
+
+# emacsclient -c ~/notes/documentation/$1.org
+
+echo "message-info 'wrote ~/notes/documentation/$1.org'" >> $QUTE_FIFO

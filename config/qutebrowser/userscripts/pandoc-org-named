@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+filename=$(echo $QUTE_SELECTED_TEXT | tr -cd '[[:alnum:]]._-')
+
+pandoc -s -r html $QUTE_URL -o ~/notes/documentation/$filename.org
+
+echo "message-info 'wrote ~/notes/documentation/$filename.org from $QUTE_URL'" >> $QUTE_FIFO
+

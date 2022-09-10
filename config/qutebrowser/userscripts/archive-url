@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+# qutebrowser userscript
+# write current url to an archive file
+URL_ARCHIVE_FILE='/home/infty/notes/url-archive.org'
+
+echo $QUTE_URL >> $URL_ARCHIVE_FILE
+echo message-info \'saved current url to $URL_ARCHIVE_FILE \' >> $QUTE_FIFO
+# TODO prompt user to give a quick description

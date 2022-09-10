@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+echo "open !g $QUTE_TITLE" | sed 's/at DuckDuckGo//'>> $QUTE_FIFO
+# echo foo bar baz buz | sed 's/baz buz//'

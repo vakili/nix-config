@@ -1,7 +1,11 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, nur, ... }:
+
+let
+in
+{
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors), use something like:
     # inputs.nix-colors.homeManagerModule
@@ -15,28 +19,75 @@
   home = {
     username = "infty";
     homeDirectory = "/home/infty";
+    sessionVariables = {
+      NIX_CONFIG = "experimental-features = nix-command flakes";
+      FOO = "foo";
+    };
+    packages = with pkgs;
+      [
+        age
+        fd
+        ripgrep
+        nixpkgs-fmt
+        dzen2
+        light
+        acpi
+        age
+        pandoc
+        redshift
+        tree
+        xsel
+        ranger
+        feh
+        vim
+      ];
   };
-  
-  xsession.windowManager.xmonad = {
-    enable = true;
-    enableContribAndExtras = true;
-  };
-
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  home.packages = with pkgs; [ vim dzen2];
-
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.git.enable = true;
-  programs.kitty.enable = true;
-  
-  xdg = {
-    configFile = {
-      xmonad = {
-        source = ../config/xmonad;
-        recursive = true;
+  programs = {
+    firefox = {
+      enable = true;
+#      extensions = 
+#        with pkgs.nur.repos.rycee.firefox-addons; [
+#          privacy-badger
+#        ];
+    };
+    home-manager.enable = true;
+    git = {
+      enable = true;
+      extraConfig = {
+        init.defaultBranch = "main";
       };
+    };
+    bash = {
+      enable = true;
+      historyFileSize = 1000000000000;
+    };
+    skim = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+    kitty = {
+      enable = true;
+      extraConfig = "
+        confirm_os_window_close 0
+      ";
+    };
+    qutebrowser.enable = true;
+    neovim = {
+      enable = true;
+      extraConfig = "
+        set clipboard+=unnamedplus
+      ";
+    };
+    rofi.enable = true;
+  };
+  xsession = {
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
     };
   };
 
@@ -45,4 +96,17 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "22.05";
+  
+  xdg = {
+    configFile = {
+      xmonad = {
+        source = ../config/xmonad;
+        recursive = true;
+      };
+      qutebrowser = {
+        source = ../config/qutebrowser;
+        recursive = true;
+      };
+    };
+  };
 }

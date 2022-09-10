@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+echo "jseval document.getElementsByClassName('btn btn-outline flex-1 ml-1 m-md-0 ml-md-2 js-cookie-consent-reject')[0].click()" >> $QUTE_FIFO
+

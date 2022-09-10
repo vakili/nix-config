@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+# qutebrowser userscript
+# Deletes the last line in an archive file.
+# To be used in combination with the script `url-archive`
+
+URL_ARCHIVE_FILE='/home/infty/notes/url-archive.org'
+LAST_LINE_CONTENT=$(tail -1 $URL_ARCHIVE_FILE | head -1)
+
+sed -i '' -e '$ d' $URL_ARCHIVE_FILE
+echo message-info \'deleted $LAST_LINE_CONTENT\' >> $QUTE_FIFO

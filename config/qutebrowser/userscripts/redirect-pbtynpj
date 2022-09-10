@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+## stackexchange mirror
+
+NEW_URL=$(echo $QUTE_URL | sed 's/https:\/\/stackoverflow.com/http:\/\/pbtynpj.com\/stackoverflow_/')
+
+echo "open $NEW_URL" >> $QUTE_FIFO

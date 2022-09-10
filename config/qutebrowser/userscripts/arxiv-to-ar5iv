@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+echo "open $QUTE_URL" | sed 's/arxiv/ar5iv/' >> $QUTE_FIFO
