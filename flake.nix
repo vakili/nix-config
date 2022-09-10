@@ -53,8 +53,7 @@
         });
 
       nixosConfigurations = {
-        # FIXME replace with your hostname
-        your-hostname = nixpkgs.lib.nixosSystem {
+        faultline = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages.x86_64-linux;
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
           modules = (builtins.attrValues nixosModules) ++ [
@@ -65,8 +64,7 @@
       };
 
       homeConfigurations = {
-        # FIXME replace with your username@hostname
-        "your-username@your-hostname" =
+        "infty@faultline" =
           home-manager.lib.homeManagerConfiguration {
             pkgs = legacyPackages.x86_64-linux;
             extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
