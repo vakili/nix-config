@@ -106,6 +106,9 @@ in
     source = ../misc/background-image;
     target = ".background-image";
   };
+  # zathura
+  programs.zathura.enable = true;
+  xdg.mimeApps.defaultApplications."application/pdf" = [ "org.pwmt.zathura.desktop" ];
   
   xdg = {
     configFile = {
