@@ -43,7 +43,11 @@ in
         vim
       ];
   };
+  services = {
+    emacs.enable = true;
+  };
   programs = {
+    emacs.enable = true;
     firefox = {
       enable = true;
       extensions = 
