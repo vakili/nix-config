@@ -55,6 +55,9 @@
   };
   
   services.xserver.enable = true;
+  services.xserver.layout = "us";
+  services.xserver.xkbVariant = "colemak";
+  services.xserver.xkbOptions = "caps:swapescape";
   services.xserver.windowManager.xmonad = {
     enable = true;
     enableContribAndExtras = true;
