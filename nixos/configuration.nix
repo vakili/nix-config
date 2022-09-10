@@ -63,6 +63,8 @@
     enableContribAndExtras = true;
   };
   services.xserver.displayManager.defaultSession = "none+xmonad";
+  services.xserver.autoRepeatDelay = 200;
+  services.xserver.autoRepeatInterval = 100;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {

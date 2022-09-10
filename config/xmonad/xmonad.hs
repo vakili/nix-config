@@ -48,7 +48,7 @@ main = do
 myStartupHook :: X ()
 -- ^ actions to run at the start of the X session
 myStartupHook = do
-  spawnHere "~/.xmonad/autostart.sh"
+  spawnHere "~/.config/xmonad/autostart.sh"
   setWMName "LG3D" -- spoof window manager name in order to make jetbrains stuff work
 
 myLayoutHook =

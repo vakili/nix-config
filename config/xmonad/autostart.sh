@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## set the key repeat rate
-xset r rate 200 100
+#xset r rate 200 100
 
 # unify clipboards
 # autocutsel -s CLIPBOARD &
